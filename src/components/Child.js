@@ -3,7 +3,6 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 
 var ShowList = React.createClass({
   _unfriend: function(index){
-    console.log('index', index);
     AppDispatcher.dispatch({
       actionType: 'unfriend',
       index: index

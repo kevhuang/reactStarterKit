@@ -35,6 +35,11 @@ var FriendsStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(action) {
 
   switch(action.actionType) {
+    case 'addFriend':
+      _friends.push(action.friendName);
+      FriendsStore.emitChange();
+      break;
+
     case 'unfriend':
       var friendIndex = action.index;
       _friends.splice(friendIndex, 1);
